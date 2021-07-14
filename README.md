@@ -1,6 +1,6 @@
 # helping_hands_v2
 
-A new Flutter project.
+This is the Flutter Application for Blood Donation which will help people to donate and receive the blood.
 
 ## Getting Started
 
