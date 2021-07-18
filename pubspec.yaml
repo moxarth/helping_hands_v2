@@ -23,14 +23,16 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.2
 
   # firebase
-  firebase_core: "^0.7.0"
-  firebase_auth: "^0.20.1"
+  firebase_auth: ^3.0.1
+  firebase_core: ^1.4.0
 
-  # Animations
+  # others
+  cupertino_icons: ^1.0.2
   flutter_native_splash: ^1.2.0
+  google_fonts: ^2.1.0
+  http_parser: ^4.0.0
   lottie: ^1.1.0
 
 dev_dependencies:
