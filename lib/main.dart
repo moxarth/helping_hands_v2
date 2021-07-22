@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       title: 'Helping Hands',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Colors.orange.shade400,
+        primaryColor: Colors.orange.shade500,
         textTheme: GoogleFonts.latoTextTheme(),
         scaffoldBackgroundColor: Colors.white,
         brightness: Brightness.light,
