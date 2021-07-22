@@ -28,7 +28,8 @@ class _LandingPageState extends State<LandingPage> {
         }
         
         else if(snapshot.connectionState == ConnectionState.active){
-          User user = snapshot.data;
+          dynamic user = snapshot.data;
+
           // ignore: unnecessary_null_comparison
           if(user == null){
             return LoginPage();

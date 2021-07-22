@@ -6,11 +6,11 @@ class CustomInput extends StatefulWidget {
   final String? label;
   final String? hintText;
   final Function(String)? onChanged;
-  final Function(String)? onSubmitted;
+  final Function(String?)? onSubmitted;
   final FocusNode? focusNode;
   final Icon? iconData;
   final bool? obscuredText;
-  final Function(String)? validator;
+  final String? Function(String?)? validator;
   final TextInputAction? textInputAction;
 
   CustomInput(
@@ -29,16 +29,21 @@ class CustomInput extends StatefulWidget {
 }
 
 class _CustomInputState extends State<CustomInput> {
+
+  String? cast<String>(x) => x is String ? x : null;
+
   @override
   Widget build(BuildContext context) {
     bool obsText = widget.obscuredText ?? false;
     TextInputAction textInputAction = widget.textInputAction ?? TextInputAction.done;
 
     return TextFormField(
+      validator: widget.validator!,
       focusNode: widget.focusNode,
       textInputAction: textInputAction,
       obscureText: obsText,
       onChanged: widget.onChanged,
+      onSaved: widget.onSubmitted,
       decoration: InputDecoration(
         suffixIcon: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20),
@@ -61,10 +66,20 @@ class _CustomInputState extends State<CustomInput> {
         ),
         focusedBorder: OutlineInputBorder(
           gapPadding: 3.0,
-          borderRadius: BorderRadius.circular(getProportionateScreenHeight(20)),
+          borderRadius: BorderRadius.circular(getProportionateScreenHeight(10)),
           borderSide: BorderSide(width: 2.0, color: Colors.orange),
         ),
       ),
     );
+  }
+}
+
+class Cast<String> {
+  String? f(x) {
+    if (x is String?) {
+      return x;
+    } else {
+      return null;
+    }
   }
 }

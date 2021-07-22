@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:helping_hands_v2/routes.dart';
 import 'package:helping_hands_v2/screens/splash_page/splash_screen.dart';
 
@@ -21,11 +22,24 @@ class MyApp extends StatelessWidget {
       title: 'Helping Hands',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          scaffoldBackgroundColor: Colors.white,
-          appBarTheme: AppBarTheme(
-            systemOverlayStyle:
-                SystemUiOverlayStyle(statusBarColor: Colors.red),
-          )),
+        primaryColor: Colors.orange.shade400,
+        textTheme: GoogleFonts.latoTextTheme(),
+        scaffoldBackgroundColor: Colors.white,
+        brightness: Brightness.light,
+        appBarTheme: AppBarTheme(
+          systemOverlayStyle:
+              SystemUiOverlayStyle(statusBarColor: Colors.white),
+          iconTheme: IconThemeData(color: Colors.black45),
+          color: Colors.white,
+          textTheme: TextTheme(
+            headline6: GoogleFonts.lato(
+              color: Colors.black54,
+              fontSize: 22.0,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ),
+      ),
       initialRoute: SplashScreen.routeName,
       routes: routes,
     );
